@@ -1,0 +1,122 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <div class='unix'>
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle" alt="woman avatar"
+            width="250px" height="250px">
+        </div>
+        <h1 class="font-weight-light">Augustine Ochieng</h1> <hr>
+        <p class="lead">Sofotware Engineer</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Page Content -->
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+    <div class="col-md-2">
+    <h2 class="font-weight-light">About Me</h2>
+    <hr>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+    <p style="text-align:left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis
+      blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit
+      expedita.</p>
+      </div>
+      </div>
+  </div>
+</section>
+  <h1 style="text-align: center">Projects <br>  <i class="fas fa-medal  fa-3x yellow-text pr-3" style="float:center"></i></h1>
+  <div class="container">
+
+    <div class="row" style="padding:40px">
+  {% for project in projects %}
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+
+  
+      
+      <div class="col-md-4">
+        <div class="card card-2" style="height:100%">
+          <h3>{{project.name}}</h3>
+          <div class="note">
+          <p style="color: black">{{project.description}}</p>
+          <p style="color: black"><a href="{{project.link}}">View site </a> </p>
+            </div>
+        </div>
+      </div>
+      
+    
+
+{% endfor %}
+</div>
+
+</div>
+<h2 style="text-align:center">Skills <br> <i class="fas fa-code fa-3x yellow-text pr-3"></i></h2>
+<div class="row" >
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<button class="btn dusty-grass-gradient w3-round-xxlarge"><i class="fab fa-python fa-3x green-text pr-3"></i>
+  Python</button>
+<button class="btn dusty-grass-gradient w3-round-xxlarge"><i class="fab fa-angular fa-3x green-text pr-3"></i>
+  Angular</button>
+<button class="btn dusty-grass-gradient w3-round-xxlarge"><i class="fab fa-js-square fa-3x green-text pr-3"></i>
+  Javascript</button>
+  </div>
+  <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+  <button class="btn dusty-grass-gradient w3-round-xxlarge"><i class="fab fa-css3 fa-3x green-text pr-3"></i>
+    CSS</button>
+    <button class="btn dusty-grass-gradient w3-round-xxlarge"><i class="fab fa-html5 fa-3x green-text pr-3"></i>
+      HTML5</button>
+      <hr>
+      </div>
+      <div class="col-md-4"></div>
+      </div>
+
+     <div class="card border-warning mb-3" style="max-width: 20rem;">
+       <div class="card-header bg-transparent border-success">Header</div>
+       <div class="card-body text-success">
+         <h5 class="card-title">Success Panel title</h5>
+         <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's
+           content.</p>
+       </div>
+       <div class="card-footer bg-transparent border-success">Footer</div>
+     </div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+{% endblock %}
